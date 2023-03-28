@@ -3,6 +3,7 @@ body{
     position: relative;
     width: 100vw;
     min-height: 100vh;
+    margin: 0;
     overflow: hidden;
 }
 
@@ -132,7 +133,7 @@ p{
 
 .purple{
     font-size: 40px;
-    background: rgba(97, 54, 152, 0.40);
+    background: rgba(127, 84, 183, 0.7);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
