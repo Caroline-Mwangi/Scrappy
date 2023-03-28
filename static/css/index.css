@@ -1,0 +1,289 @@
+body{
+    background-image: linear-gradient(180deg, rgba(135, 79, 209, 0.9) 0%, rgba(32, 105, 147, 0.71) 100%);
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.logo{
+    position: relative;
+    left: 10px;
+    margin-top: 0px;
+    font-family: 'Oregano';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 60px;
+    background: linear-gradient(180deg, #010577 0%, #841e7a 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.main-bot{
+    position: absolute;
+    background: linear-gradient(180deg, #A732A9 0%, #2931E5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    width: 25px;
+    height: 25px;
+    left: 265px;
+    top: 50px;
+}
+
+.main-brd{
+    position: absolute;
+    background: linear-gradient(180deg, #A732A9 0%, #2931E5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    width: 25px;
+    height: 25px;
+    left: 1px;
+    top: 6px;
+}
+
+.main-head{
+    position: relative;
+    top: 150px;
+    font-family: 'Orelega One';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 75px;
+    text-align: center;
+    background: linear-gradient(180deg, rgb(171, 202, 48) 0%, #f9cc2a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stag-btn{
+    position: relative;
+    background: linear-gradient(180deg, rgb(171, 202, 48) 0%, #f9cc2a 100%);
+    width: 250px;
+    height: 60px;
+    left: 36.2%;
+    top: 120px;
+    border-radius: 19px;
+    font-family: 'Orelega One';
+    font-style: normal;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.stag-btn:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.uname-btn{
+    position: relative;
+    background: linear-gradient(180deg, rgb(171, 202, 48) 0%, #f9cc2a 100%);
+    width: 250px;
+    height: 60px;
+    left: 36.2%;
+    top: 120px;
+    border-radius: 19px;
+    font-family: 'Orelega One';
+    font-style: normal;
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+}
+
+.uname-btn:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+p{
+    position: relative;
+    font-family: 'Orelega One';
+    font-size: 20px;
+    left: 36.7%;
+    top: 190px;
+    border: 2px solid black;
+    width: 450px;
+    height: 20px;
+    text-align: justify;
+    padding: 15px 15px 15px 15px;
+    border-radius: 19px;
+    background-color: rgb(146, 142, 142, 0.3);
+}
+
+.blue{
+    font-size: 40px;
+    background: rgba(36, 112, 156, 0.40);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: rotate 3s linear infinite;
+}
+
+.black{
+    font-size: 40px;
+    background: rgba(0, 0, 0, 0.40);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: rotate 3s linear infinite;
+}
+
+.purple{
+    font-size: 40px;
+    background: rgba(97, 54, 152, 0.40);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: rotate 3s linear infinite;
+}
+
+.brd1{
+    position: absolute;
+    top: 200px;
+    left:4%;
+}
+
+.brd2{
+    position: absolute;
+    top: 701px;
+    left:15%;
+}
+
+.brd3{
+    position: absolute;
+    top: 796px;
+    left: 45%; 
+}
+
+.brd4{
+    position: absolute;
+    top: 550px;
+    left: 70%; 
+}
+
+.brd5{
+    position: absolute;
+    top: 84px;
+    left: 87%; 
+}
+
+.brd6{
+    position: absolute;
+    top: 455px;
+    left: 25%;    
+}
+
+.brd7{
+    position: absolute;
+    top: 950px;
+    left: 33%;    
+}
+
+.brd8{
+    position: absolute;
+    top: 895px;
+    left: 65%;
+    
+}
+
+.brd9{
+    position: absolute;
+    top: 992px;
+    left: 4%;  
+}
+
+.brd10{
+    position: absolute;
+    top: 746px;
+    left: 80%; 
+}
+
+.brd11{
+    position: absolute;
+    top: 980px;
+    left: 90%;  
+}
+
+.brd12{
+    position: absolute;
+    top: 388px;
+    left: 95%;
+}
+
+@keyframes rotate {
+    100% {transform: rotate(360deg);}
+}
+
+.bot1{
+    position: absolute;
+    top: 970px;
+    left: 77%;
+}
+
+.bot2{
+    position: absolute;
+    top: 550px;
+    left: 85%;
+}
+
+.bot3{
+    position: absolute;
+    top: 1090px;
+    left: 65%;
+}
+
+.bot4{
+    position: absolute;
+    top: 230px;
+    left: 20%;
+}
+
+.bot5{
+    position: absolute;
+    top: 650px;
+    left: 4%;
+}
+
+.bot6{
+    position: absolute;
+    top: 650px;
+    left: 55%;
+}
+
+.bot7{
+    position: absolute;
+    top: 315px;
+    left: 80%;
+}
+
+.bot8{
+    position: absolute;
+    top: 700px;
+    left: 92%;
+}
+
+.bot9{
+    position: absolute;
+    top: 400px;
+    left: 10%;
+}
+
+.bot10{
+    position: absolute;
+    top: 750px;
+    left: 30%;
+}
+
+.bot11{
+    position: absolute;
+    top: 1025px;
+    left: 50%;
+}
+
+.bot12{
+    position: absolute;
+    top: 1000px;
+    left: 17%;
+}
