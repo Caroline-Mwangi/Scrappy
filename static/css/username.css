@@ -21,6 +21,10 @@ body{
     background-clip: text;
 }
 
+a{
+    text-decoration: none;
+}
+
 .main-bot{
     position: absolute;
     background: linear-gradient(180deg, #A732A9 0%, #2931E5 100%);
@@ -94,11 +98,11 @@ body{
 }
 
 input{
-    position: relative;
+    position: absolute;
     font-family: 'Orelega One';
     font-size: 20px;
-    left: 13%;
-    top: 270px;
+    left: 36%;
+    top: 520px;
     border: 2px solid black;
     width: 470px;
     height: 20px;
@@ -290,12 +294,12 @@ input{
 }
 
 .go{
-    position: relative;
+    position: absolute;
     background: linear-gradient(180deg, rgb(171, 202, 48) 0%, #f9cc2a 100%);
     width: 100px;
     height: 60px;
-    left: -1.2%;
-    top: 390px;
+    left: 45.5%;
+    top: 650px;
     border-radius: 19px;
     font-family: 'Orelega One';
     font-style: normal;
