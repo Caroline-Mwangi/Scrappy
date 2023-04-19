@@ -17,8 +17,13 @@
         <h1 class="main-head">LET'S GET SOME TWEETS...</h1>
         <a href="srchtag"><button class="stag-btn">Search Tag</button></a>
         <button class="uname-btn">Username</button>
-        <input placeholder="Enter a username..." >
-        <button class="go">Go</button>
+
+        <form action="/username" method="post">
+        {% csrf_token %}
+            <input type="text" id="username"  name="username"  placeholder="Enter a username..." required>
+            <button class="go">Go</button>
+        </form>
+
 
         <div class="tweet-brd">
             <i class="fa-brands fa-twitter brd1 blue"></i>
