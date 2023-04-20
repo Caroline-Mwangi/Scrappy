@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Scrappy Home</title>
+        <title>Scrappy Search</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'css/srch_tag.css' %}">
@@ -17,8 +17,12 @@
         <h1 class="main-head">LET'S GET SOME TWEETS...</h1>
         <button class="stag-btn">Search Tag</button>
         <a href="username"><button class="uname-btn">Username</button></a>
-        <input placeholder="Enter a search tag..." >
-        <button class="go">Go</button>
+
+        <form action="/srchtag" method="post">
+        {% csrf_token %}
+            <input type="text" id="search_tag" name="search_tag" placeholder="Enter a search tag..." required>
+            <button class="go">Go</button>
+        </form>
 
         <div class="tweet-brd">
             <i class="fa-brands fa-twitter brd1 blue"></i>
