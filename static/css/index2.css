@@ -59,12 +59,12 @@ body{
     background-clip: text;
 }
 
-.tw-login-btn{
+.stag-btn{
     position: relative;
     background: linear-gradient(180deg, rgb(171, 202, 48) 0%, #f9cc2a 100%);
-    width: 450px;
-    height: 80px;
-    left: 37.2%;
+    width: 250px;
+    height: 60px;
+    left: 36.2%;
     top: 120px;
     border-radius: 19px;
     font-family: 'Orelega One';
@@ -73,12 +73,45 @@ body{
     font-weight: bold;
 }
 
-.tw-login-btn:hover{
+.stag-btn:hover{
     opacity: 0.6;
     cursor: pointer;
 }
 
+.uname-btn{
+    position: relative;
+    background: linear-gradient(180deg, rgb(171, 202, 48) 0%, #f9cc2a 100%);
+    width: 250px;
+    height: 60px;
+    left: 36.2%;
+    top: 120px;
+    border-radius: 19px;
+    font-family: 'Orelega One';
+    font-style: normal;
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+}
 
+.uname-btn:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+p{
+    position: relative;
+    font-family: 'Orelega One';
+    font-size: 20px;
+    left: 36.7%;
+    top: 190px;
+    border: 2px solid black;
+    width: 450px;
+    height: 20px;
+    text-align: justify;
+    padding: 15px 15px 15px 15px;
+    border-radius: 19px;
+    background-color: rgb(146, 142, 142, 0.3);
+}
 
 .blue{
     font-size: 40px;

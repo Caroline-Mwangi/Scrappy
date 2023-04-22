@@ -21,6 +21,10 @@ body{
     background-clip: text;
 }
 
+a{
+    text-decoration: none;
+}
+
 .main-bot{
     position: absolute;
     background: linear-gradient(180deg, #A732A9 0%, #2931E5 100%);
@@ -59,26 +63,55 @@ body{
     background-clip: text;
 }
 
-.tw-login-btn{
-    position: relative;
-    background: linear-gradient(180deg, rgb(171, 202, 48) 0%, #f9cc2a 100%);
-    width: 450px;
-    height: 80px;
-    left: 37.2%;
-    top: 120px;
-    border-radius: 19px;
+.phone{
+    position: absolute;
     font-family: 'Orelega One';
-    font-style: normal;
     font-size: 20px;
-    font-weight: bold;
+    left: 36%;
+    top: 450px;
+    border: 2px solid black;
+    width: 470px;
+    height: 20px;
+    text-align: justify;
+    padding: 15px 15px 15px 15px;
+    border-radius: 19px;
+    background-color: rgba(229, 220, 220, 0.2);
 }
 
-.tw-login-btn:hover{
+.username{
+    position: absolute;
+    font-family: 'Orelega One';
+    font-size: 20px;
+    left: 36%;
+    top: 550px;
+    border: 2px solid black;
+    width: 470px;
+    height: 20px;
+    text-align: justify;
+    padding: 15px 15px 15px 15px;
+    border-radius: 19px;
+    background-color: rgba(229, 220, 220, 0.2);
+}
+
+.password{
+    position: absolute;
+    font-family: 'Orelega One';
+    font-size: 20px;
+    left: 36%;
+    top: 650px;
+    border: 2px solid black;
+    width: 470px;
+    height: 20px;
+    text-align: justify;
+    padding: 15px 15px 15px 15px;
+    border-radius: 19px;
+    background-color: rgba(229, 220, 220, 0.2);
+}
+
+::placeholder{
+    color: black;
     opacity: 0.6;
-    cursor: pointer;
 }
-
-
 
 .blue{
     font-size: 40px;
@@ -216,7 +249,7 @@ body{
 
 .bot6{
     position: absolute;
-    top: 650px;
+    top: 800px;
     left: 55%;
 }
 
@@ -254,4 +287,24 @@ body{
     position: absolute;
     top: 1000px;
     left: 17%;
+}
+
+.go{
+    position: absolute;
+    background: linear-gradient(180deg, rgb(171, 202, 48) 0%, #f9cc2a 100%);
+    width: 100px;
+    height: 60px;
+    left: 45.5%;
+    top: 750px;
+    border-radius: 19px;
+    font-family: 'Orelega One';
+    font-style: normal;
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+}
+
+.go:hover{
+    opacity: 0.6;
+    cursor: pointer;
 }

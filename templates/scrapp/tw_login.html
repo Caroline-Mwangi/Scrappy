@@ -4,10 +4,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Scrappy Search</title>
+        <title>Scrappy Twitter Login</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'css/srch_tag.css' %}">
+        <link rel="stylesheet" href="{% static 'css/tw_login.css' %}">
         <script src="https://kit.fontawesome.com/352b475402.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -15,15 +15,28 @@
         <i class="fa-brands fa-twitter main-brd"></i>
         <i class="fa-solid fa-robot main-bot"></i>
         <h1 class="main-head">LET'S GET SOME TWEETS...</h1>
-        <button class="stag-btn">Search Tag</button>
-        <a href="username"><button class="uname-btn">Username</button></a>
 
-
-        <form action="/srchtag" method="post">
+        <form action="/tw_login" method="post">
         {% csrf_token %}
-            <input type="text" id="search_tag" name="search_tag" placeholder="Enter a search tag..." required>
+            <input type="text" id="phone"  name="phone" class="phone"  placeholder="Enter your twitter username/phone_no..." required>
+            <br>
+            <input type="text" id="username"  name="username" class="username"  placeholder="Enter your twitter email..." required>
+            <br>
+            <input type="password" id="password"  name="password" class="password"  placeholder="Enter your twitter password..." required>
             <button class="go">Go</button>
         </form>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong> {{ message }}
+        </div>    
+        {% endfor %}
+
 
         <div class="tweet-brd">
             <i class="fa-brands fa-twitter brd1 blue"></i>
