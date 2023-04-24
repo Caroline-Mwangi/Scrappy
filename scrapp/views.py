@@ -7,6 +7,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import *
 from django.contrib import messages
+from .models import Tweets
 
 
 def index(request):
@@ -36,8 +37,8 @@ def srchtag(request):
 
             url = env('URL')
 
-            Tweets=[]
-            Timestamp=[]
+            Tweets_lst=[]
+            Timestamp_lst=[]
             
             lg_name = tw_username
             lg_pass = tw_password
@@ -65,14 +66,13 @@ def srchtag(request):
             driver.implicitly_wait(150)
 
             while True:
-                for tweet in tweets:
-                    tweet_text = tweet.find_element(By.CSS_SELECTOR, 'div[data-testid="tweetText"]').text.encode("utf-8")
-                    Tweets.append(tweet_text)
+                for t in tweets:
+                    tweet_text = t.find_element(By.CSS_SELECTOR, 'div[data-testid="tweetText"]').text
+                    Tweets_lst.append(tweet_text)
 
                     timestamp = driver.find_element(By.CSS_SELECTOR, 'time').get_attribute('datetime')
-                    Timestamp.append(timestamp)
+                    Timestamp_lst.append(timestamp)
                     
-                    print(Tweets, Timestamp)
                     driver.implicitly_wait(150) 
                 
                 driver.implicitly_wait(150)   
@@ -80,8 +80,13 @@ def srchtag(request):
                 driver.implicitly_wait(150)
                 tweets = driver.find_elements(By.CSS_SELECTOR,'[data-testid="tweet"]')
                 driver.implicitly_wait(150)
-                Tweets2 = list(set(Tweets))
+                Tweets2 = list(set(Tweets_lst))
                 if len(Tweets2) > 3:
+                    print(Tweets_lst, Timestamp_lst)
+                    x = zip(Tweets_lst, Timestamp_lst)
+                    for (tw, tm) in x:
+                        result = Tweets(search_tag=tag, tweet=tw, date=tm)
+                        result.save()
                     break
                 driver.quit()
                 return render(request, "scrapp/index.html")
@@ -99,8 +104,8 @@ def username(request):
 
             url = env('URL')
 
-            Tweets=[]
-            Timestamp=[]
+            Tweets_lst=[]
+            Timestamp_lst=[]
             
             lg_name = tw_username
             lg_pass = tw_password
@@ -128,14 +133,13 @@ def username(request):
             driver.implicitly_wait(150)
 
             while True:
-                for tweet in tweets:
-                    tweet_text = tweet.find_element(By.CSS_SELECTOR, 'div[data-testid="tweetText"]').text.encode("utf-8")
-                    Tweets.append(tweet_text)
+                for t in tweets:
+                    tweet_text = t.find_element(By.CSS_SELECTOR, 'div[data-testid="tweetText"]').text
+                    Tweets_lst.append(tweet_text)
 
                     timestamp = driver.find_element(By.CSS_SELECTOR, 'time').get_attribute('datetime')
-                    Timestamp.append(timestamp)
+                    Timestamp_lst.append(timestamp)
                     
-                    print(Tweets, Timestamp)
                     driver.implicitly_wait(150) 
                 
                 driver.implicitly_wait(150)   
@@ -143,9 +147,14 @@ def username(request):
                 driver.implicitly_wait(150)
                 tweets = driver.find_elements(By.CSS_SELECTOR,'[data-testid="tweet"]')
                 driver.implicitly_wait(150)
-                Tweets2 = list(set(Tweets))
+                Tweets2 = list(set(Tweets_lst))
                 if len(Tweets2) > 3:
                     break
+                print(Tweets_lst, Timestamp_lst)
+                x = zip(Tweets_lst, Timestamp_lst)
+                for (tw, tm) in x:
+                    result = Tweets(search_tag=name, tweet=tw, date=tm)
+                    result.save()
                 driver.quit()
                 return render(request, "scrapp/index.html")
     except:
