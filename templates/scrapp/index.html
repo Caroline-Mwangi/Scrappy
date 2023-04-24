@@ -15,6 +15,13 @@
         <i class="fa-brands fa-twitter main-brd"></i>
         <i class="fa-solid fa-robot main-bot"></i>
         <h1 class="main-head">LET'S GET SOME TWEETS...</h1>
+
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong> {{ message }}
+        </div>    
+        {% endfor %}
+
         <a href="tw_login"><button class="tw-login-btn">Log Into Your Twitter Account</button></a>
 
         <div class="tweet-brd">

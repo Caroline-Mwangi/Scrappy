@@ -255,3 +255,17 @@ body{
     top: 1000px;
     left: 17%;
 }
+
+.alert{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 60px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    width: 17%;
+    position: relative;
+    left: 38.5%;
+    top: 105px;
+    background-color: rgba(241, 119, 119, 0.6);
+}

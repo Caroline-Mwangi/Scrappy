@@ -42,6 +42,7 @@ def srchtag(request):
             lg_name = tw_username
             lg_pass = tw_password
             lg_phone = tw_phone
+            
 
             driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
             driver.get(url)
@@ -54,17 +55,15 @@ def srchtag(request):
             driver.find_element(By.CSS_SELECTOR,'[name="text"]').send_keys(lg_phone, Keys.ENTER)
             driver.implicitly_wait(150)
             driver.find_element(By.CSS_SELECTOR,'[name="password"]').send_keys(lg_pass, Keys.ENTER)
-            
-            
+
             driver.find_element(By.CSS_SELECTOR,'[placeholder="Search Twitter"]').send_keys(tag, Keys.ENTER)
-            driver.implicitly_wait(250)
-            
+            driver.implicitly_wait(150)
             driver.find_element(By.XPATH,"//span[text()='Latest']").click()
             driver.implicitly_wait(150)
-            
+
             tweets = driver.find_elements(By.CSS_SELECTOR,'[data-testid="tweet"]')
             driver.implicitly_wait(150)
-            
+
             while True:
                 for tweet in tweets:
                     tweet_text = tweet.find_element(By.CSS_SELECTOR, 'div[data-testid="tweetText"]').text.encode("utf-8")
@@ -85,11 +84,10 @@ def srchtag(request):
                 if len(Tweets2) > 3:
                     break
                 driver.quit()
-                return render(request, "scrapp/tw_login.html")
+                return render(request, "scrapp/index.html")
     except:
-        messages.error(request, "OOPS! Something went wrong. Please reload the page and try again.")
-        return render(request, "scrapp/tw_login.html")
-        
+        messages.error(request, "OOPS! Something went wrong. Please try again.")
+        return render(request, "scrapp/index.html")
     return render(request, "scrapp/srch_tag.html")
 
 def username(request):
@@ -149,9 +147,9 @@ def username(request):
                 if len(Tweets2) > 3:
                     break
                 driver.quit()
-                return render(request, "scrapp/tw_login.html")
+                return render(request, "scrapp/index.html")
     except:
-        messages.error(request, "OOPS! Something went wrong. Please reload the page and try again.")
-        return render(request, "scrapp/tw_login.html")
+        messages.error(request, "OOPS! Something went wrong. Please try again.")
+        return render(request, "scrapp/index.html")
     return render(request, "scrapp/username.html")
     
