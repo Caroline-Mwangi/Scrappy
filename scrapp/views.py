@@ -8,6 +8,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import *
 from django.contrib import messages
 from .models import Tweets
+import django_tables2 as tables
 
 
 def index(request):
@@ -53,10 +54,16 @@ def srchtag(request):
             driver.implicitly_wait(150)
             driver.find_element(By.CSS_SELECTOR,'[name="text"]').send_keys(lg_name, Keys.ENTER)
             driver.implicitly_wait(150)
-            driver.find_element(By.CSS_SELECTOR,'[name="text"]').send_keys(lg_phone, Keys.ENTER)
+            a = driver.find_element(By.CSS_SELECTOR,'[name="text"]')
+
+            if a:
+                a.send_keys(lg_phone, Keys.ENTER)
+            else:
+                driver.find_element(By.CSS_SELECTOR,'[name="password"]').send_keys(lg_pass, Keys.ENTER)
+
             driver.implicitly_wait(150)
             driver.find_element(By.CSS_SELECTOR,'[name="password"]').send_keys(lg_pass, Keys.ENTER)
-
+            driver.implicitly_wait(150)
             driver.find_element(By.CSS_SELECTOR,'[placeholder="Search Twitter"]').send_keys(tag, Keys.ENTER)
             driver.implicitly_wait(150)
             driver.find_element(By.XPATH,"//span[text()='Latest']").click()
@@ -85,7 +92,7 @@ def srchtag(request):
                     print(Tweets_lst, Timestamp_lst)
                     x = zip(Tweets_lst, Timestamp_lst)
                     for (tw, tm) in x:
-                        result = Tweets(search_tag=tag, tweet=tw, date=tm)
+                        result = Tweets(search_tag_or_username=tag, tweet=tw, date=tm)
                         result.save()
                     break
                 driver.quit()
@@ -120,10 +127,16 @@ def username(request):
             driver.implicitly_wait(150)
             driver.find_element(By.CSS_SELECTOR,'[name="text"]').send_keys(lg_name, Keys.ENTER)
             driver.implicitly_wait(150)
-            driver.find_element(By.CSS_SELECTOR,'[name="text"]').send_keys(lg_phone, Keys.ENTER)
+            a = driver.find_element(By.CSS_SELECTOR,'[name="text"]')
+
+            if a:
+                a.send_keys(lg_phone, Keys.ENTER)
+            else:
+                driver.find_element(By.CSS_SELECTOR,'[name="password"]').send_keys(lg_pass, Keys.ENTER)
+
             driver.implicitly_wait(150)
             driver.find_element(By.CSS_SELECTOR,'[name="password"]').send_keys(lg_pass, Keys.ENTER)
-
+            driver.implicitly_wait(150)
             driver.find_element(By.CSS_SELECTOR,'[placeholder="Search Twitter"]').send_keys(name, Keys.ENTER)
             driver.implicitly_wait(150)
             driver.find_element(By.CSS_SELECTOR,'[href="/{}"]'.format(name)).send_keys(Keys.ENTER)
@@ -153,7 +166,7 @@ def username(request):
                 print(Tweets_lst, Timestamp_lst)
                 x = zip(Tweets_lst, Timestamp_lst)
                 for (tw, tm) in x:
-                    result = Tweets(search_tag=name, tweet=tw, date=tm)
+                    result = Tweets(search_tag_or_username=name, tweet=tw, date=tm)
                     result.save()
                 driver.quit()
                 return render(request, "scrapp/index.html")
@@ -161,4 +174,14 @@ def username(request):
         messages.error(request, "OOPS! Something went wrong. Please try again.")
         return render(request, "scrapp/index.html")
     return render(request, "scrapp/username.html")
+
+class SimpleTable(tables.Table):
+    class Meta:
+        model = Tweets
+        template_name = "django_tables2/semantic.html"
+        
+class TableView(tables.SingleTableView):
+    table_class = SimpleTable
+    queryset = Tweets.objects.all()
+    template_name = "scrapp/tw_view.html"
     

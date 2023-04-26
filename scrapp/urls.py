@@ -1,5 +1,4 @@
-from django.contrib import admin
-from django.urls import include, path
+from django.urls import path
 from . import views
 
 urlpatterns = [
@@ -8,4 +7,5 @@ urlpatterns = [
     path('tw_login', views.tw_login, name="tw_login"),
     path('srchtag', views.srchtag, name="srchtag"),
     path('username', views.username, name="username"),
+    path('tw_view', views.TableView.as_view(), name="tw_view"),
 ]

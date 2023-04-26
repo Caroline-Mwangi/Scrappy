@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Scrappy Home</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/tw_view.css' %}">
+        <script src="https://kit.fontawesome.com/352b475402.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    </head>
+    <body>
+        <a href="index"><h1 class="logo">SCRAPPY</h1></a>
+        <i class="fa-brands fa-twitter main-brd"></i>
+        <i class="fa-solid fa-robot main-bot"></i>
+        <h1 class="main-head">HERE ARE YOUR SCRAPED TWEETS...</h1>
+
+        <div class="table">
+            {% load django_tables2 %}
+            {% render_table table %}
+        </div>
+
+
+        <div class="tweet-brd">
+            <i class="fa-brands fa-twitter brd1 blue"></i>
+            <i class="fa-brands fa-twitter brd2 blue"></i>
+            <i class="fa-brands fa-twitter brd3 blue"></i>
+            <i class="fa-brands fa-twitter brd4 blue"></i>
+            <i class="fa-brands fa-twitter brd5 blue"></i>
+            <i class="fa-brands fa-twitter brd6 black"></i>
+            <i class="fa-brands fa-twitter brd7 black"></i>
+            <i class="fa-brands fa-twitter brd8 black"></i>
+            <i class="fa-brands fa-twitter brd9 purple"></i>
+            <i class="fa-brands fa-twitter brd10 purple"></i>
+            <i class="fa-brands fa-twitter brd11 purple"></i>
+            <i class="fa-brands fa-twitter brd12 purple"></i>
+        </div>
+        
+        <div class="bot">
+            <i class="fa-solid fa-robot bot1 blue"></i>
+            <i class="fa-solid fa-robot bot2 blue"></i>
+            <i class="fa-solid fa-robot bot3 blue"></i>
+            <i class="fa-solid fa-robot bot4 blue"></i>
+            <i class="fa-solid fa-robot bot5 black"></i>
+            <i class="fa-solid fa-robot bot6 black"></i>
+            <i class="fa-solid fa-robot bot7 black"></i>
+            <i class="fa-solid fa-robot bot8 black"></i>
+            <i class="fa-solid fa-robot bot9 purple"></i>
+            <i class="fa-solid fa-robot bot10 purple"></i>
+            <i class="fa-solid fa-robot bot11 purple"></i>
+            <i class="fa-solid fa-robot bot12 purple"></i>
+        </div>
+    </body>
+</html>
