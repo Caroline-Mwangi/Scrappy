@@ -46,7 +46,14 @@ def srchtag(request):
             lg_phone = tw_phone
             
 
-            driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+            chrome_options = webdriver.ChromeOptions()
+            chrome_options.binary_location = env('GOOGLE_CHROME_BIN')
+            chrome_options.add_argument("--headless")
+            chrome_options.add_argument("--disable-dev-shm-usage")
+            chrome_options.add_argument("--no-sandbox")
+            
+            # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+            driver = webdriver.Chrome(executable_path=env('CHROMEDRIVER_PATH'), chrome_options=chrome_options)
             driver.get(url)
             driver.implicitly_wait(150)
             
