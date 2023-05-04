@@ -58,12 +58,14 @@ def srchtag(request):
 
             if a:
                 a.send_keys(lg_phone, Keys.ENTER)
+                driver.implicitly_wait(150)
+                driver.find_element(By.CSS_SELECTOR,'[name="password"]').send_keys(lg_pass, Keys.ENTER)
+                driver.implicitly_wait(150)
+                
             else:
                 driver.find_element(By.CSS_SELECTOR,'[name="password"]').send_keys(lg_pass, Keys.ENTER)
-
-            driver.implicitly_wait(150)
-            driver.find_element(By.CSS_SELECTOR,'[name="password"]').send_keys(lg_pass, Keys.ENTER)
-            driver.implicitly_wait(150)
+                driver.implicitly_wait(150)
+            
             driver.find_element(By.CSS_SELECTOR,'[placeholder="Search Twitter"]').send_keys(tag, Keys.ENTER)
             driver.implicitly_wait(150)
             driver.find_element(By.XPATH,"//span[text()='Latest']").click()
@@ -131,12 +133,13 @@ def username(request):
 
             if a:
                 a.send_keys(lg_phone, Keys.ENTER)
+                driver.implicitly_wait(150)
+                driver.find_element(By.CSS_SELECTOR,'[name="password"]').send_keys(lg_pass, Keys.ENTER)
+                driver.implicitly_wait(150)
             else:
                 driver.find_element(By.CSS_SELECTOR,'[name="password"]').send_keys(lg_pass, Keys.ENTER)
-
-            driver.implicitly_wait(150)
-            driver.find_element(By.CSS_SELECTOR,'[name="password"]').send_keys(lg_pass, Keys.ENTER)
-            driver.implicitly_wait(150)
+                driver.implicitly_wait(150)
+                
             driver.find_element(By.CSS_SELECTOR,'[placeholder="Search Twitter"]').send_keys(name, Keys.ENTER)
             driver.implicitly_wait(150)
             driver.find_element(By.CSS_SELECTOR,'[href="/{}"]'.format(name)).send_keys(Keys.ENTER)
