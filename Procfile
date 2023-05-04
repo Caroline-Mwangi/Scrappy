@@ -1,1 +1,1 @@
-web: gunicorn authSys.wsgi --log-file -
+web: gunicorn scrappy.wsgi --log-file -
