@@ -53,7 +53,7 @@ def srchtag(request):
             chrome_options.add_argument("--no-sandbox")
             
             # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-            driver = webdriver.Chrome(executable_path=env('CHROMEDRIVER_PATH'), chrome_options=chrome_options)
+            driver = webdriver.Chrome(env('CHROMEDRIVER_PATH'), chrome_options=chrome_options)
             driver.get(url)
             driver.implicitly_wait(150)
             
